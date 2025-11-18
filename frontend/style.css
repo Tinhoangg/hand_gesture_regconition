@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+h2 {
+    min-height: 2.5em; /* Giữ chiều cao cố định cho dòng kết quả */
+}
+
+/* Đây là phần quan trọng để video và canvas đè lên nhau */
+.container {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    border: 3px solid #555;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: #000;
+}
+
+#webcam, #output_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Lật ngang video (mirror) để giống như soi gương */
+    transform: scaleX(-1);
+}
+
+#output_canvas {
+    z-index: 10; /* Đảm bảo canvas nằm trên video */
+}
+
+#gesture_result {
+    color: #d9534f; /* Màu đỏ */
+    font-weight: bold;
+    font-size: 1.5em;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* ... (Code cũ của bạn giữ nguyên) ... */
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px; /* Khoảng cách giữa 2 nút */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 150px; /* Giữ độ rộng nút ổn định */
+}
+
+#check-button {
+    background-color: #ffc107; /* Màu vàng */
+    color: black;
+}
+
+#delete-button {
+    background-color: #dc3545; /* Màu đỏ */
+    color: white;
+}
+
+#delete-button:hover {
+    background-color: #c82333;
+}
+.history-box {
+    margin: 15px auto;
+    padding: 10px;
+    width: 80%;
+    height: 120px;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow-y: auto;
+    font-family: monospace;
+    font-size: 16px;
+    color: #333;
+    white-space: pre-wrap;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
