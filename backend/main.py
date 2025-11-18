@@ -23,7 +23,7 @@ app.mount('/', socketio.ASGIApp(sio))
 # load pytorch model
 try:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = torch.jit.load('hand_gesture.pt', map_location=device)
+    model = torch.jit.load('model/hand_gesture.pt', map_location=device)
     model.to(device)
     model.eval()
     print(f" Đã tải model TorchScript 'hand_gesture.pt' thành công. Chạy trên {device}.")
