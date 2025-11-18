@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 from collections import Counter 
 import time
-from utils.preprocess import get_normalization_params, normalize_keypoints, decode_prediction
+from utils.preprocess import get_normalization_params, normalize_keypoints, decode_prediction, landmarks_to_array_21x3
 # SETUP
 SEQUENCE_LENGTH = 60  
 NUM_FEATURES = 126    
