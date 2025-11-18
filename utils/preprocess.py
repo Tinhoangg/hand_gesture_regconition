@@ -1,6 +1,4 @@
-import numpy as np
-import torch
-import torch.nn as nn
+
 def landmarks_to_array_21x3(landmarks_list):
     if not landmarks_list or len(landmarks_list) != 21:
         return np.zeros((21, 3), dtype=np.float32)
@@ -47,4 +45,4 @@ def decode_prediction(prediction_output):
     if class_index < len(CLASS_NAMES):
         return CLASS_NAMES[class_index]
     else:
-        return "..." # None
+        return "..." 
