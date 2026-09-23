@@ -23,7 +23,7 @@ A real-time hand gesture recognition system built with **MediaPipe Keypoint Extr
 
 ## ⚙️ Installation
 ```bash
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 ## Running Inference
 ```bash
